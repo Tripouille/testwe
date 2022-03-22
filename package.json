@@ -11,14 +11,19 @@
     "format:c": "yarn prettier -c '**/*.{ts,tsx,yml,json,md}'"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@types/eslint": "^8",
     "@types/prettier": "^2",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@types/react-redux": "^7",
     "@vitejs/plugin-react": "^1.0.7",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
