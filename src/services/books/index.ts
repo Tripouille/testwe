@@ -1,14 +1,7 @@
-import { createApi, fetchBaseQuery, FetchBaseQueryMeta } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ApiEndpoint, API_URL } from '../constants';
+import { extractTotalPagesFromMeta } from '../utils';
 import { Book, BooksQueryArgs, BooksQueryResponse } from './types';
-
-const extracttotalPagesFromMeta = (meta?: FetchBaseQueryMeta): number => {
-  const links = meta?.response?.headers.get('link')?.split(',');
-  if (!links) return 0;
-  const lastLink = links.find((link: string) => link.includes('last'));
-  const lastLinkPageRegexResult = lastLink?.match(/page=([0-9]+)/);
-  return Number(lastLinkPageRegexResult?.at(1) ?? 0);
-};
 
 export const booksApi = createApi({
   reducerPath: 'booksApi',
@@ -23,7 +16,7 @@ export const booksApi = createApi({
         params,
       }),
       transformResponse(params: Book[], meta) {
-        return { books: params, totalPages: extracttotalPagesFromMeta(meta) };
+        return { books: params, totalPages: extractTotalPagesFromMeta(meta) };
       },
     }),
   }),
