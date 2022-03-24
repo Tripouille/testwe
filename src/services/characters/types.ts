@@ -17,8 +17,8 @@ export interface Character {
   playedBy: string[];
 }
 
-export type CharactersApiResponse = Character;
+export type CharacterQueryResponse = Character;
 
-export interface CharactersApiQueryArgs {
+export interface CharacterQueryArgs {
   id: number;
 }
