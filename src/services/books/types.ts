@@ -12,12 +12,12 @@ export interface Book {
   povCharacters: string[];
 }
 
-export interface BooksApiResponse {
+export interface BooksQueryResponse {
   books: Book[];
   totalPages: number;
 }
 
-export interface BooksApiQueryArgs {
+export interface BooksQueryArgs {
   page: number;
   pageSize: number;
 }

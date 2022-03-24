@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Grid } from '@mui/material';
-import { BooksApiResponse } from '../../../services/books/types';
+import { BooksQueryResponse } from '../../../services/books/types';
 import BookCard from './BookCard';
 
-export type BooksGridProps = Pick<BooksApiResponse, 'books'>;
+export type BooksGridProps = Pick<BooksQueryResponse, 'books'>;
 
 const BooksGrid: FC<BooksGridProps> = ({ books }) => {
   return (
