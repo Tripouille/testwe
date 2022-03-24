@@ -1,6 +1,7 @@
-import { Pagination, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 import React, { useState } from 'react';
 import Loader from '../../components/Loader';
+import Pagination from '../../components/Pagination';
 import { useCharactersQuery } from '../../services/characters';
 import CharactersGrid from './CharactersGrid';
 
@@ -17,10 +18,6 @@ const Characters = () => {
             page={page}
             count={data.totalPages}
             onChange={(_event, newPage) => setPage(newPage)}
-            variant="outlined"
-            color="primary"
-            shape="rounded"
-            size="large"
           />
         </>
       )}
