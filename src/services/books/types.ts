@@ -17,7 +17,7 @@ export interface BooksApiResponse {
   totalPages: number;
 }
 
-export interface BooksApiQueryArg {
+export interface BooksApiQueryArgs {
   page: number;
   pageSize: number;
 }

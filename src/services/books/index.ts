@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryMeta } from '@reduxjs/toolkit/query/react';
 import { ApiEndpoint, API_URL } from '../constants';
-import { Book, BooksApiQueryArg, BooksApiResponse } from './types';
+import { Book, BooksApiQueryArgs, BooksApiResponse } from './types';
 
 const extracttotalPagesFromMeta = (meta?: FetchBaseQueryMeta): number => {
   const links = meta?.response?.headers.get('link')?.split(',');
@@ -11,13 +11,13 @@ const extracttotalPagesFromMeta = (meta?: FetchBaseQueryMeta): number => {
 };
 
 export const booksApi = createApi({
-  reducerPath: 'signinApi',
+  reducerPath: 'booksApi',
   baseQuery: fetchBaseQuery({
     baseUrl: API_URL,
   }),
   tagTypes: ['books'],
   endpoints: builder => ({
-    books: builder.query<BooksApiResponse, BooksApiQueryArg>({
+    books: builder.query<BooksApiResponse, BooksApiQueryArgs>({
       query: params => ({
         url: ApiEndpoint.BOOKS,
         params,
