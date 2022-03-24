@@ -1,4 +1,4 @@
-import { Backdrop, CircularProgress, Pagination, Stack, Typography } from '@mui/material';
+import { Backdrop, CircularProgress, Pagination, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import { useBooksQuery } from '../../services/books';
 import BooksGrid from './BooksGrid';
@@ -9,9 +9,6 @@ const Books = () => {
 
   return (
     <Stack alignItems="center">
-      <Typography variant="h1" color="primary">
-        Books
-      </Typography>
       {data && (
         <>
           <BooksGrid books={data.books} />
