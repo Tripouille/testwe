@@ -1,5 +1,6 @@
-import { Backdrop, CircularProgress, Pagination, Stack } from '@mui/material';
+import { Pagination, Stack } from '@mui/material';
 import React, { useState } from 'react';
+import Loader from '../../components/Loader';
 import { useCharactersQuery } from '../../services/characters';
 import CharactersGrid from './CharactersGrid';
 
@@ -23,11 +24,7 @@ const Characters = () => {
           />
         </>
       )}
-      {isFetching && (
-        <Backdrop sx={{ zIndex: theme => theme.zIndex.drawer + 1 }} open>
-          <CircularProgress color="inherit" />
-        </Backdrop>
-      )}
+      {isFetching && <Loader loading />}
     </Stack>
   );
 };
