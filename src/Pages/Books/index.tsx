@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import Loader from '../../components/Loader';
 import Pagination from '../../components/Pagination';
 import { useBooksQuery } from '../../services/books';
+import { BOOKS_PER_PAGE } from '../../utils/constants';
 import BooksGrid from './BooksGrid';
 
 const Books = () => {
   const [page, setPage] = useState(1);
-  const { data, isFetching } = useBooksQuery({ page, pageSize: 6 });
+  const { data, isFetching } = useBooksQuery({ page, pageSize: BOOKS_PER_PAGE });
 
   return (
     <Stack alignItems="center">
