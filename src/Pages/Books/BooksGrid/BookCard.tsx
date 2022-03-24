@@ -3,29 +3,15 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, Button, Card, CardActions, CardContent, Divider, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import { Book } from '../../../services/books/types';
-
-const useStyles = makeStyles(() => ({
-  card: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: '100%',
-  },
-  cardContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
-}));
+import { useCardStyles } from '../../../utils/styles';
 
 export interface BookCardProps {
   book: Book;
 }
 
 const BookCard: FC<BookCardProps> = ({ book }) => {
-  const classes = useStyles();
+  const classes = useCardStyles();
   const { name, isbn, authors, numberOfPages } = book;
 
   return (
