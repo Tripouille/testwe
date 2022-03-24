@@ -17,6 +17,13 @@ export interface Character {
   playedBy: string[];
 }
 
+export type CharactersQueryResponse = { characters: Character[]; totalPages: number };
+
+export interface CharactersQueryArgs {
+  page: number;
+  pageSize: number;
+}
+
 export type CharacterQueryResponse = Character;
 
 export interface CharacterQueryArgs {
