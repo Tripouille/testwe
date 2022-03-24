@@ -7,7 +7,7 @@ const theme = createTheme({
       main: brown[500],
     },
     secondary: {
-      main: grey[500],
+      main: grey[300],
     },
   },
 });
