@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ApiEndpoint, API_URL } from '../constants';
-import { CharactersApiQueryArgs, CharactersApiResponse } from './types';
+import { CharacterQueryArgs, CharacterQueryResponse } from './types';
 
 export const charactersApi = createApi({
   reducerPath: 'charactersApi',
@@ -9,7 +9,7 @@ export const charactersApi = createApi({
   }),
   tagTypes: ['characters'],
   endpoints: builder => ({
-    character: builder.query<CharactersApiResponse, CharactersApiQueryArgs>({
+    character: builder.query<CharacterQueryResponse, CharacterQueryArgs>({
       query: params => ({
         url: `${ApiEndpoint.CHARACTERS}/${params.id}`,
       }),
