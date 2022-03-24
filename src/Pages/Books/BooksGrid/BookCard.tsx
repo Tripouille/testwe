@@ -12,7 +12,6 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: '100%',
-    border: '1px solid brown',
   },
   cardContent: {
     display: 'flex',
