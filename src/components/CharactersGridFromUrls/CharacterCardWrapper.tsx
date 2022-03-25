@@ -1,13 +1,13 @@
 import { Skeleton } from '@mui/material';
 import React, { FC } from 'react';
-import { useCharacterQuery } from '../../../services/characters';
-import CharacterCard from '../../Characters/CharactersGrid/CharacterCard';
+import CharacterCard from '../CharacterCard';
+import { useCharacterQuery } from '../../services/characters';
 
-export interface RelatedCharacterProps {
+export interface CharacterCardWrapperProps {
   characterUrl: string;
 }
 
-const RelatedCharacter: FC<RelatedCharacterProps> = ({ characterUrl }) => {
+const CharacterCardWrapper: FC<CharacterCardWrapperProps> = ({ characterUrl }) => {
   const characterId = Number(characterUrl.split('/').at(-1));
   const { data: character, isFetching } = useCharacterQuery({ id: characterId });
 
@@ -16,4 +16,4 @@ const RelatedCharacter: FC<RelatedCharacterProps> = ({ characterUrl }) => {
   return <CharacterCard character={character} />;
 };
 
-export default RelatedCharacter;
+export default CharacterCardWrapper;

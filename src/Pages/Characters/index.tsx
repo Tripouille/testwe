@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Loader from '../../components/Loader';
 import Pagination from '../../components/Pagination';
 import { useCharactersQuery } from '../../services/characters';
-import CharactersGrid from './CharactersGrid';
+import CharactersGrid from '../../components/CharactersGrid';
 
 const Characters = () => {
   const [page, setPage] = useState(1);

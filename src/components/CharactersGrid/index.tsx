@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import CharacterCard from './CharacterCard';
-import { CharactersQueryResponse } from '../../../services/characters/types';
-import GridContainer from '../../../components/GridContainer';
-import GridItem from '../../../components/GridItem';
+import CharacterCard from '../CharacterCard';
+import { CharactersQueryResponse } from '../../services/characters/types';
+import GridContainer from '../GridContainer';
+import GridItem from '../GridItem';
 
 export type CharactersGridProps = Pick<CharactersQueryResponse, 'characters'>;
 
