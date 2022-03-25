@@ -18,9 +18,9 @@ const NavBar = () => {
         orientation={isMobile ? 'vertical' : 'horizontal'}
       >
         <Tab
-          value={FrontOfficeRoutes.HOME}
+          value={FrontOfficeRoutes.BOOKS}
           label="Books"
-          onClick={() => navigate(FrontOfficeRoutes.HOME)}
+          onClick={() => navigate(FrontOfficeRoutes.BOOKS)}
         />
         <Tab
           value={FrontOfficeRoutes.CHARACTERS}
