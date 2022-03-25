@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { BooksQueryResponse } from '../../../services/books/types';
-import BookCard from './BookCard';
-import GridItem from '../../../components/GridItem';
-import GridContainer from '../../../components/GridContainer';
+import { BooksQueryResponse } from '../../services/books/types';
+import BookCard from '../BookCard';
+import GridItem from '../GridItem';
+import GridContainer from '../GridContainer';
 
 export type BooksGridProps = Pick<BooksQueryResponse, 'books'>;
 
