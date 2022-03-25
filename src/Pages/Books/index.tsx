@@ -4,7 +4,7 @@ import Loader from '../../components/Loader';
 import Pagination from '../../components/Pagination';
 import { useBooksQuery } from '../../services/books';
 import { BOOKS_PER_PAGE } from '../../utils/constants';
-import BooksGrid from './BooksGrid';
+import BooksGrid from '../../components/BooksGrid';
 
 const Books = () => {
   const [page, setPage] = useState(1);
