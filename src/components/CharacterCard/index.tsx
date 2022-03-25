@@ -1,7 +1,7 @@
 import { Card, CardContent, Divider } from '@mui/material';
 import React, { FC } from 'react';
-import { Character } from '../../../../services/characters/types';
-import { useCardStyles } from '../../../../utils/styles';
+import { Character } from '../../services/characters/types';
+import { useCardStyles } from '../../utils/styles';
 import CharacterAliases from './CharacterAliases';
 import CharacterInfo from './CharacterInfo';
 

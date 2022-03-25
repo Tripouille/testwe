@@ -1,10 +1,8 @@
-import { Stack } from '@mui/material';
 import React, { FC, useMemo, useState } from 'react';
-import GridContainer from '../../../components/GridContainer';
-import GridItem from '../../../components/GridItem';
+import { Stack } from '@mui/material';
+import CharacterGridFromUrls from '../../../components/CharactersGridFromUrls';
 import Pagination from '../../../components/Pagination';
 import { CHARACTERS_PER_PAGE } from '../../../utils/constants';
-import RelatedCharacter from './RelatedCharacter';
 
 export interface RelatedCharactersProps {
   charactersUrls: string[];
@@ -21,13 +19,7 @@ const RelatedCharacters: FC<RelatedCharactersProps> = ({ charactersUrls }) => {
 
   return (
     <Stack alignItems="center">
-      <GridContainer>
-        {slicedCharactersUrls.map(characterUrl => (
-          <GridItem key={characterUrl}>
-            <RelatedCharacter characterUrl={characterUrl} />
-          </GridItem>
-        ))}
-      </GridContainer>
+      <CharacterGridFromUrls charactersUrls={slicedCharactersUrls} />
       <Pagination page={page} count={totalPages} onChange={(_event, newPage) => setPage(newPage)} />
     </Stack>
   );
