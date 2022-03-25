@@ -2,6 +2,7 @@ import React, { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import Books from './Pages/Books';
 import Characters from './Pages/Characters';
+import FavoriteCharacters from './Pages/FavoriteCharacters';
 import NotFound from './Pages/NotFound';
 import { FrontOfficeRoutes } from './utils/constants';
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Navigate to={FrontOfficeRoutes.BOOKS} replace />} />
         <Route path={FrontOfficeRoutes.BOOKS} element={<Books />} />
         <Route path={FrontOfficeRoutes.CHARACTERS} element={<Characters />} />
+        <Route path={FrontOfficeRoutes.FAVORITE_CHARACTERS} element={<FavoriteCharacters />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

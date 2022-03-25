@@ -6,7 +6,7 @@ import { FrontOfficeRoutes } from '../../utils/constants';
 const NavBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const isMobile = useMediaQuery('(max-width:300px)');
+  const isMobile = useMediaQuery('(max-width:400px)');
 
   return (
     <AppBar position="sticky">
@@ -26,6 +26,11 @@ const NavBar = () => {
           value={FrontOfficeRoutes.CHARACTERS}
           label="Characters"
           onClick={() => navigate(FrontOfficeRoutes.CHARACTERS)}
+        />
+        <Tab
+          value={FrontOfficeRoutes.FAVORITE_CHARACTERS}
+          label="Favorite characters"
+          onClick={() => navigate(FrontOfficeRoutes.FAVORITE_CHARACTERS)}
         />
       </Tabs>
     </AppBar>
