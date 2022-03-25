@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { Book } from '../../services/books/types';
 import useBoolean from '../../hooks/useBoolean';
-import RelatedCharacters from '../../Pages/Books/RelatedCharacters';
+import RelatedCharacters from '../../pages/Books/RelatedCharacters';
 import { useCardStyles } from '../../utils/styles';
 
 export interface BookCardProps {

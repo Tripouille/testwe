@@ -1,9 +1,9 @@
 import React, { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Books from './Pages/Books';
-import Characters from './Pages/Characters';
-import FavoriteCharacters from './Pages/FavoriteCharacters';
-import NotFound from './Pages/NotFound';
+import Books from './pages/Books';
+import Characters from './pages/Characters';
+import FavoriteCharacters from './pages/FavoriteCharacters';
+import NotFound from './pages/NotFound';
 import { FrontOfficeRoutes } from './utils/constants';
 
 function App() {
