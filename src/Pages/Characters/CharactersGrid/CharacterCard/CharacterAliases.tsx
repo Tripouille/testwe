@@ -10,15 +10,15 @@ const CharacterAliases: FC<CharacterAliasesProps> = ({ aliases }) => {
 
   return (
     <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap">
-      <Typography variant="subtitle1" padding={2}>
+      <Typography variant="h6" padding={2}>
         {availableAliases ? (
           aliases.map(alias => (
-            <Typography key={alias} variant="subtitle1" textAlign="center">
+            <Typography key={alias} variant="h6" textAlign="center">
               {alias}
             </Typography>
           ))
         ) : (
-          <Typography variant="subtitle1" textAlign="center">
+          <Typography variant="h6" textAlign="center">
             Unknown
           </Typography>
         )}
