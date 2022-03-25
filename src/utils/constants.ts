@@ -2,6 +2,7 @@
 export enum FrontOfficeRoutes {
   BOOKS = '/books',
   CHARACTERS = '/characters',
+  FAVORITE_CHARACTERS = '/favorite-characters',
 }
 
 export const BOOKS_PER_PAGE = 6;
