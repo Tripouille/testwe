@@ -10,7 +10,7 @@ const Characters = () => {
   const { data, isFetching } = useCharactersQuery({ page, pageSize: 6 });
 
   return (
-    <Stack alignItems="center">
+    <Stack alignItems="center" width="100%">
       {data && (
         <>
           <CharactersGrid characters={data.characters} />

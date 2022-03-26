@@ -11,7 +11,7 @@ const Books = () => {
   const { data, isFetching } = useBooksQuery({ page, pageSize: BOOKS_PER_PAGE });
 
   return (
-    <Stack alignItems="center">
+    <Stack alignItems="center" width="100%">
       {data && (
         <>
           <BooksGrid books={data.books} />

@@ -20,7 +20,7 @@ const CharactersGridFromUrlsWithPagination: FC<CharactersGridFromUrlsWithPaginat
   );
 
   return (
-    <Stack alignItems="center">
+    <Stack alignItems="center" width="100%">
       <CharacterGridFromUrls charactersUrls={slicedCharactersUrls} />
       {totalPages > 0 && (
         <Pagination
