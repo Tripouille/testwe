@@ -82,6 +82,9 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
             bgcolor="white"
             sx={{ minHeight: '100%' }}
           >
+            <Typography pt={2} variant="h6" textAlign="center">
+              {name}
+            </Typography>
             <CharactersGridFromUrlsWithPagination charactersUrls={characters} />
             <Button variant="outlined" color="primary" onClick={closeModal} sx={{ margin: '10px' }}>
               Back to results
