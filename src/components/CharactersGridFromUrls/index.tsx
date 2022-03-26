@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import GridContainer from '../GridContainer';
 import GridItem from '../GridItem';
-import CharacterCardWrapper from './CharacterCardWrapper';
+import CharacterCardFromUrl from './CharacterCardFromUrl';
 
 export interface CharacterGridFromUrlsProps {
   charactersUrls: string[];
@@ -12,7 +12,7 @@ const CharacterGridFromUrls: FC<CharacterGridFromUrlsProps> = ({ charactersUrls 
     <GridContainer>
       {charactersUrls.map(characterUrl => (
         <GridItem key={characterUrl}>
-          <CharacterCardWrapper characterUrl={characterUrl} />
+          <CharacterCardFromUrl characterUrl={characterUrl} />
         </GridItem>
       ))}
     </GridContainer>
