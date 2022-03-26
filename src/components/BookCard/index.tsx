@@ -85,13 +85,24 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
       </Card>
 
       {modalIsOpen && (
-        <Modal open onClose={closeModal} sx={{ overflow: 'auto' }}>
+        <Modal
+          open
+          onClose={closeModal}
+          sx={{
+            display: 'flex',
+            flexDirection: 'colum',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Box
             display="flex"
             flexDirection="column"
             alignItems="center"
             bgcolor="white"
-            sx={{ minHeight: '100%' }}
+            maxHeight="95%"
+            minWidth="80%"
+            overflow="auto"
           >
             <Typography pt={2} variant="h6" textAlign="center">
               {name}
