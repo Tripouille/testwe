@@ -62,6 +62,17 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
             ))}
           </Box>
           <Divider />
+          {characters.length === 0 && (
+            <Typography
+              variant="subtitle2"
+              textAlign="center"
+              color="primary"
+              fontWeight="medium"
+              pt={2}
+            >
+              NO RELATED CHARACTERS
+            </Typography>
+          )}
         </CardContent>
 
         {characters.length > 0 && (
