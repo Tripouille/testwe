@@ -28,7 +28,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
 
   return (
     <>
-      <Card className={classes.card}>
+      <Card className={classes.card} data-cy="book-card">
         <CardContent className={classes.card}>
           <Typography variant="subtitle1" color="text.primary" textAlign="center" padding={2}>
             {name}

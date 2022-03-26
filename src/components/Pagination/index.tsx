@@ -13,6 +13,7 @@ const Pagination: FC<PaginationProps> = ({ page, count, onChange }) => {
       color="primary"
       shape="rounded"
       size="large"
+      data-cy="pagination"
     />
   );
 };
