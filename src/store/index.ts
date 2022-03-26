@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query/react';
+import { useDispatch } from 'react-redux';
 import { booksApi } from '../services/books';
 import { charactersApi } from '../services/characters';
+import favoriteCharacterUrlsReducer from './slices/favoriteCharacterUrls';
 
 const store = configureStore({
   reducer: {
+    favoriteCharacterUrls: favoriteCharacterUrlsReducer,
     // Add the generated reducer as a specific top-level slice
     [booksApi.reducerPath]: booksApi.reducer,
     [charactersApi.reducerPath]: charactersApi.reducer,
@@ -18,5 +21,9 @@ const store = configureStore({
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
 // see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
 setupListeners(store.dispatch);
+
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export type RootState = ReturnType<typeof store.getState>;
 
 export default store;
