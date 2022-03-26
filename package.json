@@ -30,6 +30,7 @@
     "@types/react-dom": "^17.0.10",
     "@types/react-redux": "^7",
     "@vitejs/plugin-react": "^1.0.7",
+    "cypress": "^9.5.2",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.29.4",
