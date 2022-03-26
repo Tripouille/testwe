@@ -4,11 +4,11 @@ import CharacterCard from '../CharacterCard';
 import { useCharacterQuery } from '../../services/characters';
 import { getLastUrlPart } from '../../utils/url';
 
-export interface CharacterCardWrapperProps {
+export interface CharacterCardFromUrlProps {
   characterUrl: string;
 }
 
-const CharacterCardWrapper: FC<CharacterCardWrapperProps> = ({ characterUrl }) => {
+const CharacterCardFromUrl: FC<CharacterCardFromUrlProps> = ({ characterUrl }) => {
   const characterId = Number(getLastUrlPart(characterUrl));
   const { data: character, isFetching } = useCharacterQuery({ id: characterId });
 
@@ -17,4 +17,4 @@ const CharacterCardWrapper: FC<CharacterCardWrapperProps> = ({ characterUrl }) =
   return <CharacterCard character={character} />;
 };
 
-export default CharacterCardWrapper;
+export default CharacterCardFromUrl;
