@@ -1,14 +1,16 @@
 import React, { FC, useMemo, useState } from 'react';
 import { Stack } from '@mui/material';
-import CharacterGridFromUrls from '../../../components/CharactersGridFromUrls';
-import Pagination from '../../../components/Pagination';
-import { CHARACTERS_PER_PAGE } from '../../../utils/constants';
+import { CHARACTERS_PER_PAGE } from '../../utils/constants';
+import CharacterGridFromUrls from '../CharactersGridFromUrls';
+import Pagination from '../Pagination';
 
-export interface RelatedCharactersProps {
+export interface CharactersGridFromUrlsWithPaginationProps {
   charactersUrls: string[];
 }
 
-const RelatedCharacters: FC<RelatedCharactersProps> = ({ charactersUrls }) => {
+const CharactersGridFromUrlsWithPagination: FC<CharactersGridFromUrlsWithPaginationProps> = ({
+  charactersUrls,
+}) => {
   const [page, setPage] = useState(1);
   const totalPages = Math.ceil(charactersUrls.length / CHARACTERS_PER_PAGE);
   const charactersUrlsDelta = (page - 1) * CHARACTERS_PER_PAGE;
@@ -20,9 +22,15 @@ const RelatedCharacters: FC<RelatedCharactersProps> = ({ charactersUrls }) => {
   return (
     <Stack alignItems="center">
       <CharacterGridFromUrls charactersUrls={slicedCharactersUrls} />
-      <Pagination page={page} count={totalPages} onChange={(_event, newPage) => setPage(newPage)} />
+      {totalPages > 0 && (
+        <Pagination
+          page={page}
+          count={totalPages}
+          onChange={(_event, newPage) => setPage(newPage)}
+        />
+      )}
     </Stack>
   );
 };
 
-export default RelatedCharacters;
+export default CharactersGridFromUrlsWithPagination;
