@@ -3,8 +3,11 @@ import * as Assert from '../utils/assert';
 import * as Select from '../utils/select';
 
 describe('Nav bar', () => {
-  it('home should redirect to books', () => {
+  before(() => {
     Visit.home();
+  });
+
+  it('home should redirect to books', () => {
     Assert.currentUrlIsBooks();
   });
 
