@@ -8,7 +8,7 @@ export interface CharacterInfoProps {
 
 const CharacterInfo: FC<CharacterInfoProps> = ({ label, value }) => {
   return (
-    <Typography variant="subtitle1" color="text.primary" textAlign="center" padding={2}>
+    <Typography variant="body2" color="text.primary" textAlign="center" padding={2}>
       {`${label ? `${label}: ` : ''}${value.length ? value : 'Unknown'}`}
     </Typography>
   );

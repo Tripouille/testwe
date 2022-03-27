@@ -30,7 +30,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
     <>
       <Card className={classes.card} data-cy="book-card">
         <CardContent className={classes.card}>
-          <Typography variant="subtitle1" color="text.primary" textAlign="center" padding={2}>
+          <Typography variant="body1" color="text.primary" textAlign="center" padding={2}>
             {name}
           </Typography>
           <Divider />
@@ -56,7 +56,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
           <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap">
             <HistoryEduIcon />
             {authors.map(author => (
-              <Typography key={author} variant="subtitle2" padding={2}>
+              <Typography key={author} variant="body2" padding={2}>
                 {author}
               </Typography>
             ))}
@@ -64,7 +64,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
           <Divider />
           {characters.length === 0 && (
             <Typography
-              variant="subtitle2"
+              variant="body2"
               textAlign="center"
               color="primary"
               fontWeight="medium"
@@ -104,7 +104,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
             minWidth="80%"
             overflow="auto"
           >
-            <Typography pt={2} variant="h6" textAlign="center">
+            <Typography pt={2} variant="h6" textAlign="center" component="h1">
               {name}
             </Typography>
             <CharactersGridFromUrlsWithPagination charactersUrls={characters} />

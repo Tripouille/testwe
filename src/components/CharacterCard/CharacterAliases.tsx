@@ -10,19 +10,17 @@ const CharacterAliases: FC<CharacterAliasesProps> = ({ aliases }) => {
 
   return (
     <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap">
-      <Typography variant="h6" padding={2}>
-        {availableAliases ? (
-          aliases.map(alias => (
-            <Typography key={alias} variant="h6" textAlign="center">
-              {alias}
-            </Typography>
-          ))
-        ) : (
-          <Typography variant="h6" textAlign="center">
-            Unknown
+      {availableAliases ? (
+        aliases.map(alias => (
+          <Typography key={alias} textAlign="center" fontWeight="medium" paragraph m={1}>
+            {alias}
           </Typography>
-        )}
-      </Typography>
+        ))
+      ) : (
+        <Typography textAlign="center" fontWeight="medium" paragraph m={1}>
+          Unknown
+        </Typography>
+      )}
     </Box>
   );
 };
