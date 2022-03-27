@@ -15,7 +15,7 @@ const CharacterCard: FC<CharacterCardProps> = ({ character }) => {
   const { name, gender, culture, aliases, url } = character;
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} data-cy="character-card">
       <CardContent className={classes.card}>
         <CharacterFavorite characterUrl={url} />
         <CharacterAliases aliases={aliases} />
