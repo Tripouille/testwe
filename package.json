@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 3000",
     "lint": "eslint --ext .ts,.tsx --fix src",
     "format:w": "yarn prettier -w '**/*.{ts,tsx,yml,json,md}'",
     "format:c": "yarn prettier -c '**/*.{ts,tsx,yml,json,md}'",
