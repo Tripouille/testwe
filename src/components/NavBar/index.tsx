@@ -21,16 +21,19 @@ const NavBar = () => {
           value={FrontOfficeRoutes.BOOKS}
           label="Books"
           onClick={() => navigate(FrontOfficeRoutes.BOOKS)}
+          data-cy="nav-item"
         />
         <Tab
           value={FrontOfficeRoutes.CHARACTERS}
           label="Characters"
           onClick={() => navigate(FrontOfficeRoutes.CHARACTERS)}
+          data-cy="nav-item"
         />
         <Tab
           value={FrontOfficeRoutes.FAVORITE_CHARACTERS}
           label="Favorite characters"
           onClick={() => navigate(FrontOfficeRoutes.FAVORITE_CHARACTERS)}
+          data-cy="nav-item"
         />
       </Tabs>
     </AppBar>
