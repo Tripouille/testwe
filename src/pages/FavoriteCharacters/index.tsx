@@ -1,11 +1,12 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
-import CharactersGridFromUrlsWithPagination from '../../components/CharactersGridFromUrlsWithPagination';
-import useFavoriteCharacterUrls from '../../hooks/useFavoriteCharacterUrls';
+import CharactersGridFromIdsWithPagination from '../../components/CharactersGridFromIdsWithPagination';
+import useFavoriteCharacters from '../../hooks/useFavoriteCharacters';
 
 const FavoriteCharacters = () => {
-  const [favoriteCharacterUrls] = useFavoriteCharacterUrls();
-  if (favoriteCharacterUrls.length === 0)
+  const [favoriteCharacterIds] = useFavoriteCharacters();
+
+  if (favoriteCharacterIds.length === 0)
     return (
       <Box display="flex" justifyContent="center">
         <Typography m={4} variant="body1">
@@ -13,7 +14,7 @@ const FavoriteCharacters = () => {
         </Typography>
       </Box>
     );
-  return <CharactersGridFromUrlsWithPagination charactersUrls={favoriteCharacterUrls} />;
+  return <CharactersGridFromIdsWithPagination characterIds={favoriteCharacterIds} />;
 };
 
 export default FavoriteCharacters;

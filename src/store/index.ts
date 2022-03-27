@@ -3,11 +3,11 @@ import { setupListeners } from '@reduxjs/toolkit/query/react';
 import { useDispatch } from 'react-redux';
 import { booksApi } from '../services/books';
 import { charactersApi } from '../services/characters';
-import favoriteCharacterUrlsReducer from './slices/favoriteCharacterUrls';
+import favoriteCharactersReducer from './slices/favoriteCharacters';
 
 const store = configureStore({
   reducer: {
-    favoriteCharacterUrls: favoriteCharacterUrlsReducer,
+    favoriteCharacters: favoriteCharactersReducer,
     // Add the generated reducer as a specific top-level slice
     [booksApi.reducerPath]: booksApi.reducer,
     [charactersApi.reducerPath]: charactersApi.reducer,
