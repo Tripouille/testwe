@@ -1,6 +1,6 @@
 import * as Visit from '../utils/visit';
 import * as Select from '../utils/select';
-import { FAVORITE_CHARACTERS_LOCAL_STORAGE_KEY } from '../../src/hooks/useFavoriteCharacterUrls';
+import { FAVORITE_CHARACTERS_LOCAL_STORAGE_KEY } from '../../src/store/slices/favoriteCharacters';
 
 describe('Favorite characters', () => {
   beforeEach(() => {

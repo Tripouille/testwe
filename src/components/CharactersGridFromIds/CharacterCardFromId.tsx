@@ -2,14 +2,12 @@ import { Skeleton } from '@mui/material';
 import React, { FC } from 'react';
 import CharacterCard from '../CharacterCard';
 import { useCharacterQuery } from '../../services/characters';
-import { getLastUrlPart } from '../../utils/url';
 
-export interface CharacterCardFromUrlProps {
-  characterUrl: string;
+export interface CharacterCardFromIdProps {
+  characterId: number;
 }
 
-const CharacterCardFromUrl: FC<CharacterCardFromUrlProps> = ({ characterUrl }) => {
-  const characterId = Number(getLastUrlPart(characterUrl));
+const CharacterCardFromId: FC<CharacterCardFromIdProps> = ({ characterId }) => {
   const { data: character, isFetching } = useCharacterQuery({ id: characterId });
 
   if (isFetching) return <Skeleton height={300} width="100%" />;
@@ -17,4 +15,4 @@ const CharacterCardFromUrl: FC<CharacterCardFromUrlProps> = ({ characterUrl }) =
   return <CharacterCard character={character} />;
 };
 
-export default CharacterCardFromUrl;
+export default CharacterCardFromId;

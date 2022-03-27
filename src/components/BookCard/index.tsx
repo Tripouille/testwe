@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -15,7 +15,8 @@ import {
 import { Book } from '../../services/books/types';
 import useBoolean from '../../hooks/useBoolean';
 import { useCardStyles } from '../../utils/styles';
-import CharactersGridFromUrlsWithPagination from '../CharactersGridFromUrlsWithPagination';
+import CharactersGridFromIdsWithPagination from '../CharactersGridFromIdsWithPagination';
+import { getLastUrlPart } from '../../utils/url';
 
 export interface BookCardProps {
   book: Book;
@@ -25,6 +26,9 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
   const classes = useCardStyles();
   const { name, isbn, authors, numberOfPages, characters } = book;
   const [modalIsOpen, { on: openModal, off: closeModal }] = useBoolean();
+  const characterIds = useMemo(() => {
+    return characters.map(characterUrl => Number(getLastUrlPart(characterUrl)));
+  }, [characters]);
 
   return (
     <>
@@ -107,7 +111,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
             <Typography pt={2} variant="h6" textAlign="center" component="h1">
               {name}
             </Typography>
-            <CharactersGridFromUrlsWithPagination charactersUrls={characters} />
+            <CharactersGridFromIdsWithPagination characterIds={characterIds} />
             <Button variant="outlined" color="primary" onClick={closeModal} sx={{ margin: '10px' }}>
               Back to results
             </Button>

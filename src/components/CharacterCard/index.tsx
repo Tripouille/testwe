@@ -5,6 +5,7 @@ import { useCardStyles } from '../../utils/styles';
 import CharacterAliases from './CharacterAliases';
 import CharacterInfo from './CharacterInfo';
 import CharacterFavorite from './CharacterFavorite';
+import { getLastUrlPart } from '../../utils/url';
 
 export interface CharacterCardProps {
   character: Character;
@@ -17,7 +18,7 @@ const CharacterCard: FC<CharacterCardProps> = ({ character }) => {
   return (
     <Card className={classes.card} data-cy="character-card">
       <CardContent className={classes.card}>
-        <CharacterFavorite characterUrl={url} />
+        <CharacterFavorite characterId={Number(getLastUrlPart(url))} />
         <CharacterAliases aliases={aliases} />
         <Divider />
         <CharacterInfo label="Name" value={name} />

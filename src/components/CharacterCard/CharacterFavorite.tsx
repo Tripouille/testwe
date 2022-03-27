@@ -2,26 +2,24 @@ import { Button } from '@mui/material';
 import React, { FC } from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import useFavoriteCharacterUrls from '../../hooks/useFavoriteCharacterUrls';
+import useFavoriteCharacters from '../../hooks/useFavoriteCharacters';
 
 export interface CharacterFavoriteProps {
-  characterUrl: string;
+  characterId: number;
 }
 
-const CharacterFavorite: FC<CharacterFavoriteProps> = ({ characterUrl }) => {
-  const [
-    ,
-    { urlIsInFavoriteCharacterUrls, addFavoriteCharacterUrls, removeFavoriteCharacterUrls },
-  ] = useFavoriteCharacterUrls();
-  return urlIsInFavoriteCharacterUrls(characterUrl) ? (
+const CharacterFavorite: FC<CharacterFavoriteProps> = ({ characterId }) => {
+  const [, { characterIsInFavoriteCharacters, addFavoriteCharacter, removeFavoriteCharacter }] =
+    useFavoriteCharacters();
+  return characterIsInFavoriteCharacters(characterId) ? (
     <Button
-      onClick={() => removeFavoriteCharacterUrls(characterUrl)}
+      onClick={() => removeFavoriteCharacter(characterId)}
       data-cy="remove-favorite-character"
     >
       <StarIcon />
     </Button>
   ) : (
-    <Button onClick={() => addFavoriteCharacterUrls(characterUrl)} data-cy="add-favorite-character">
+    <Button onClick={() => addFavoriteCharacter(characterId)} data-cy="add-favorite-character">
       <StarBorderIcon />
     </Button>
   );
