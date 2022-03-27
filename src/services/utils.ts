@@ -6,5 +6,5 @@ export const extractTotalPagesFromMeta = (meta?: FetchBaseQueryMeta): number => 
   if (!links) return 0;
   const lastLink = links.find((link: string) => link.includes('last'));
   const lastLinkPageRegexResult = lastLink?.match(/page=([0-9]+)/);
-  return Number(lastLinkPageRegexResult?.at(1) ?? 0);
+  return Number(lastLinkPageRegexResult ? lastLinkPageRegexResult[1] : 0);
 };
