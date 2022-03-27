@@ -1,7 +1,6 @@
 import * as Visit from '../utils/visit';
 import * as ApiCall from '../utils/api-call';
 import * as Select from '../utils/select';
-import * as Assert from '../utils/assert';
 
 describe('Books page', () => {
   before(() => {
@@ -18,27 +17,27 @@ describe('Books page', () => {
   });
 
   it('active page should be page one', () => {
-    Assert.isAriaCurrent(Select.Pagination.page(1));
+    Select.Pagination.page(1).isAriaCurrent();
   });
 
   it('next and prev page button should work correctly', () => {
     Visit.interceptBooks();
     Select.Pagination.next().click();
     ApiCall.includesParam(Visit.Alias.BOOKS, 'page=2&pageSize=6');
-    Assert.isAriaCurrent(Select.Pagination.page(2));
+    Select.Pagination.page(2).isAriaCurrent();
     Select.Pagination.prev().click();
-    Assert.isAriaCurrent(Select.Pagination.page(1));
+    Select.Pagination.page(1).isAriaCurrent();
   });
 
   it('pagination page button should work correctly', () => {
     Visit.interceptBooks();
     Visit.books();
     ApiCall.includesParam(Visit.Alias.BOOKS, 'page=1&pageSize=6');
-    Assert.isAriaCurrent(Select.Pagination.page(1));
+    Select.Pagination.page(1).isAriaCurrent();
     Select.Pagination.page(2).click();
     ApiCall.includesParam(Visit.Alias.BOOKS, 'page=2&pageSize=6');
-    Assert.isAriaCurrent(Select.Pagination.page(2));
+    Select.Pagination.page(2).isAriaCurrent();
     Select.Pagination.page(1).click();
-    Assert.isAriaCurrent(Select.Pagination.page(1));
+    Select.Pagination.page(1).isAriaCurrent();
   });
 });

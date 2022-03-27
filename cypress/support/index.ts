@@ -9,6 +9,7 @@ declare global {
        * @example cy.dataCy('greeting')
        */
       dataCy(value: string): Chainable<JQuery<HTMLElement>>;
+      isAriaCurrent();
     }
   }
 }
