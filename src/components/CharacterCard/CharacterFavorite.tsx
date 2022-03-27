@@ -14,11 +14,14 @@ const CharacterFavorite: FC<CharacterFavoriteProps> = ({ characterUrl }) => {
     { urlIsInFavoriteCharacterUrls, addFavoriteCharacterUrls, removeFavoriteCharacterUrls },
   ] = useFavoriteCharacterUrls();
   return urlIsInFavoriteCharacterUrls(characterUrl) ? (
-    <Button onClick={() => removeFavoriteCharacterUrls(characterUrl)}>
+    <Button
+      onClick={() => removeFavoriteCharacterUrls(characterUrl)}
+      data-cy="remove-favorite-character"
+    >
       <StarIcon />
     </Button>
   ) : (
-    <Button onClick={() => addFavoriteCharacterUrls(characterUrl)}>
+    <Button onClick={() => addFavoriteCharacterUrls(characterUrl)} data-cy="add-favorite-character">
       <StarBorderIcon />
     </Button>
   );
