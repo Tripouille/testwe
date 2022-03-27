@@ -22,13 +22,7 @@ const CharactersGridFromUrlsWithPagination: FC<CharactersGridFromUrlsWithPaginat
   return (
     <Stack alignItems="center" width="100%">
       <CharacterGridFromUrls charactersUrls={slicedCharactersUrls} />
-      {totalPages > 0 && (
-        <Pagination
-          page={page}
-          count={totalPages}
-          onChange={(_event, newPage) => setPage(newPage)}
-        />
-      )}
+      <Pagination page={page} count={totalPages} onChange={(_event, newPage) => setPage(newPage)} />
     </Stack>
   );
 };
