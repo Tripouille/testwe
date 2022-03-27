@@ -12,7 +12,7 @@ const NavBar = () => {
     <AppBar position="sticky">
       <Tabs
         centered
-        value={pathname}
+        value={pathname === '/' ? FrontOfficeRoutes.BOOKS : pathname}
         textColor="secondary"
         indicatorColor="secondary"
         orientation={isMobile ? 'vertical' : 'horizontal'}
